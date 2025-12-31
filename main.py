@@ -3,9 +3,7 @@ from src.utils.utilities import utility
 
 
 def main():
-    utility.clear()
-    menu = Menu()
-    menu.show()
+    Menu.show()
 
 if __name__ == "__main__":
     main()

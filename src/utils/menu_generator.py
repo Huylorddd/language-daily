@@ -1,19 +1,19 @@
 from utilities import utility
 
 class Menu:
-    def __init__(self):
-        pass
-
     # Menu showcase::
-    def show(self):
+    @staticmethod
+    def show():
         utility.clear()
         print ("""
         L A N G U A G E   D A I L Y
             1. Log in
             0. Exit
               """)
-        
-    def choose(self):
+    
+    # Choice selection for user::
+    @staticmethod
+    def choose():
         choice = eval(input(("\t > ")))
         utility.clear()
         match choice:
