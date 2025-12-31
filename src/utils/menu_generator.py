@@ -1,4 +1,4 @@
-from utilities import utility
+from src.utils.utilities import utility
 
 class Menu:
     # Menu showcase::
