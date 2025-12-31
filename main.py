@@ -1,16 +1,9 @@
-import os
 from src.utils.menu_generator import Menu
-
-"""
-HELPER
-"""
-# Clean terminal::
-def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+from src.utils.utilities import utility
 
 
 def main():
-    clear()
+    utility.clear()
     menu = Menu()
     menu.show()
 
