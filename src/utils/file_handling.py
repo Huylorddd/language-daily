@@ -1,12 +1,17 @@
+from src.utils.utilities import utility
+import time
+
 class File:
+
+    # Create datafile in data folder with saved vocab.
     @staticmethod
     def addFile(fileName):
 
-        # Create datafile in data folder.
         filePath = ".\\data\\" + fileName
 
         with open(filePath, "a", encoding="utf-8") as file:
             while True:
+                utility.clear()
                 ENG = input("Add English words : ")
                 VIE = input("Add meaning : ")
                 file.write(ENG + ":" + VIE + "\n")
@@ -20,12 +25,16 @@ class File:
                         print("Error: Invalid input.")
 
                 if stop == 'n' or 'N': break
-        print("Added successfully !")
 
+        utility.clear()
+        print("Added successfully !")
+        time.sleep(1)
+        
+
+    # Transfer data from datafile to output variable.
     @staticmethod
     def takeOutFile(fileName, output):
 
-        # Create datafile in data folder.
         filePath = ".\\data\\" + fileName
 
         with open(filePath, "r", encoding="utf-8") as file:
