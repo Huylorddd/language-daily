@@ -8,7 +8,6 @@ class Menu:
         print ("""
         L A N G U A G E   D A I L Y
             1. Log in
-            
             0. Exit
               """)
     
