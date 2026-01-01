@@ -8,6 +8,7 @@ class Menu:
         print ("""
         L A N G U A G E   D A I L Y
             1. Log in
+            
             0. Exit
               """)
     
@@ -25,7 +26,7 @@ class Menu:
                 if ensure == 'y' or 'Y':
                     print("See you again !")
 
-            
+    
             case _:
                 print("Error: invalid choice !")
                 pass
