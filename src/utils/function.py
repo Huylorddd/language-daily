@@ -1,5 +1,6 @@
 class function:
-    def addFile(self,fileName):
+    @staticmethod
+    def addFile(fileName):
         with open(fileName,"a",encoding = "utf-8") as file:
             while True:
                 EL = input("Add English words :")
@@ -14,5 +15,13 @@ class function:
                 if stop == 'n' or stop == 'N':break
         print("Add success!")
 
+    @staticmethod
+    def takeOutFile(filename,data):
+        with open(filename,"r",encoding = "utf-8") as file:
+            for line in file:
+                line = line.strip()
+                # gán key và value thành các giá trị được phân cách bởi dấu ':' đầu tiên
+                key, value = line.split(":",1) 
+                data[key.strip()] = value.strip()
 # cn = function()
 # cn.addFile("fileTest.txt")
