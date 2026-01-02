@@ -1,2 +1,0 @@
-Vegetable:Rau cu
-Hello:xin chao

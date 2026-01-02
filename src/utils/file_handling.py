@@ -1,15 +1,30 @@
 from src.utils.utilities import utility
 import time
+import glob
+import os
+
+filePath = ".\\data\\"
 
 class File:
 
+    # Counting how many .txt files are there in data directory::
+    @staticmethod
+    def countFile():
+        file_pattern = "*.txt"
+
+        search_path = os.path.join(filePath, file_pattern)
+        txt_files = glob.glob(search_path)
+        count = len(txt_files)
+        return count
+
+
     # Create datafile in data folder with saved vocab.
     @staticmethod
-    def addFile(fileName):
+    def addFile():
+        # Auto add new .txt file without duplication.
+        fileName = os.path.join(filePath, f"daily_vocab{File.countFile()}.txt")
 
-        filePath = ".\\data\\" + fileName
-
-        with open(filePath, "a", encoding="utf-8") as file:
+        with open(fileName, "w", encoding="utf-8") as file:
             while True:
                 utility.clear()
                 ENG = input("Add English words : ")
@@ -24,7 +39,7 @@ class File:
                     else:
                         print("Error: Invalid input.")
 
-                if stop == 'n' or 'N': break
+                if stop.lower() == 'n': break
 
         utility.clear()
         print("Added successfully !")
@@ -34,8 +49,7 @@ class File:
     # Transfer data from datafile to output variable.
     @staticmethod
     def takeOutFile(fileName, output):
-
-        filePath = ".\\data\\" + fileName
+        filePath += fileName
 
         with open(filePath, "r", encoding="utf-8") as file:
             for line in file:

@@ -2,12 +2,11 @@ from src.utils.menu_generator import Menu
 from src.utils.file_handling import File
 
 def main():
-    Menu.show()
-
-    test = {}
-    File.addFile("filetext.txt")
-    File.takeOutFile("filetext.txt", test)
-    print(test)
+    while True:
+        Menu.show()
+        # Ensuring the exit command from user::
+        if Menu.choose() == False:
+            break
 
 
 if __name__ == "__main__":
